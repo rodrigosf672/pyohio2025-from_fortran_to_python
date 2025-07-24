@@ -34,6 +34,7 @@ y(0) = [1.0,\ 0.0,\ 0.0]
 .
 ├── cracker.cpython-312-darwin.so       # Compiled Fortran module (Python 3.12)
 ├── cracker.cpython-313-darwin.so       # Compiled Fortran module (Python 3.13)
+├── fortran_vs_python_edc.qmd           # Quarto report for performance results
 ├── fortran-code.f90                    # Fortran source code
 ├── ftp.py                              # Run and plot the Fortran-based simulation
 ├── pyvsft-basic_example.py             # Benchmark Fortran vs Python (single value of n)
