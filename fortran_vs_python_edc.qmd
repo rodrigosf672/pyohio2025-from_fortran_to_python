@@ -1,0 +1,89 @@
+---
+title: "Fortran vs. Python Performance: Modeling EDC Cracking"
+author: ["Rodrigo Silva Ferreira", "Dr. Helianildes Silva Ferreira"]
+format:
+  html:
+    toc: true
+    toc-depth: 2
+    code-fold: true
+    code-tools: true
+    df-print: paged
+---
+
+## Introduction
+
+This report compares the performance of a Fortran-based ODE solver with a pure Python implementation for modeling the thermal cracking of Ethylene Dichloride (EDC). The system of ordinary differential equations is solved using the Runge-Kutta-Gill method.
+
+## Reaction System
+
+The cracking of EDC involves two sequential reactions:
+
+$$
+\text{EDC} \xrightarrow{k_1} \text{MVC} + \text{HCl}, \quad
+\text{MVC} \xrightarrow{k_2} \text{HCl}
+$$
+
+Expressed as:
+
+$$
+\begin{aligned}
+\frac{dy_1}{dz} &= -k_1 y_1 \\
+\frac{dy_2}{dz} &= k_1 y_1 - k_2 y_2 \\
+\frac{dy_3}{dz} &= k_1 y_1 + k_2 y_2
+\end{aligned}
+$$
+
+With initial condition:
+
+$$
+y(0) = [1.0,\ 0.0,\ 0.0]
+$$
+
+## Methodology
+
+- Fortran subroutine `rk4g_solver` compiled with `f2py`
+- Python version implemented using NumPy
+- Performance measured using `timeit`
+- Results compared across multiple values of `n`
+
+## Results Table
+
+```{python}
+#| echo: false
+import pandas as pd
+
+data = {
+  "n": [100, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000],
+  "Fortran (s)": [0.0000, 0.0000, 0.0001, 0.0002, 0.0004, 0.0010, 0.0018, 0.0045, 0.0097, 0.0193, 0.0488, 0.0948],
+  "Python (s)": [0.0060, 0.0300, 0.0600, 0.1187, 0.3021, 0.6185, 1.2838, 3.2288, 6.4652, 13.4027, 33.2895, 66.4226],
+  "Speedup (x)": [230.84, 613.93, 570.25, 660.38, 680.40, 638.93, 722.32, 723.16, 669.15, 695.66, 682.82, 700.39]
+}
+df = pd.DataFrame(data)
+df
+```
+
+## Performance Plot
+
+```{python}
+#| echo: false
+import matplotlib.pyplot as plt
+
+ns = data["n"]
+fortran_times = data["Fortran (s)"]
+python_times = data["Python (s)"]
+
+plt.figure(figsize=(10, 6))
+plt.plot(ns, python_times, marker='o', label='Python')
+plt.plot(ns, fortran_times, marker='s', label='Fortran')
+plt.xlabel("Number of Steps (n)")
+plt.ylabel("Execution Time (s)")
+plt.title("Fortran vs Python Runtime Comparison")
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
+```
+
+## Conclusion
+
+We observed significant speedups (up to 700x) when using the Fortran implementation over Python, particularly for large-scale simulations. This reinforces the importance of choosing the right tool for the problem at hand.
