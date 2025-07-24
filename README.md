@@ -54,13 +54,21 @@ pip install -r requirements.txt
 
 ### 4. Compile the Fortran Code
 
-Make sure you have `gfortran` installed. Then run:
+To compile the fortran code, you need to have `f2py` installed, which comes with NumPy. However, the backend Fortran compiler for Python versions 3.12 and above has changed, hence being necessary to install `meson` and `ninja`:
+
+```bash
+brew install meson ninja  # macOS (use equivalent commands for Ubuntu/Windows)
+```
+
+Then, you can compile the Fortran code using `f2py`:
 
 ```bash
 f2py -c fortran-code.f90 -m cracker
 ```
 
-This generates a `.so` file that Python can import. In case you have problems with this step, you can find two already compiled `.so` files for Python 3.12 and 3.13 in this repo.
+This generates a `.so` file that Python can import. 
+
+> In case you have problems with this step, you can find two already compiled `.so` files for Python 3.12 and 3.13 in this repo.
 
 ## Usage
 
