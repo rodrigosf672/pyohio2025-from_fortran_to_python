@@ -92,10 +92,20 @@ This project is licensed under the MIT License.
 
 ## References
 
-This work was inspired by the following publication:
+This project was inspired by prior studies that modeled the cracking of Ethylene Dichloride (EDC), particularly:
 
-Schirmeister, R., Kahsnitz, J., & Träger, M. (2009). Influence of EDC cracking severity on the marginal costs of vinyl chloride production. 
-Industrial & Engineering Chemistry Research, 48(6), 2801–2809. https://doi.org/10.1021/ie8006903
+- Schirmeister, R., Kahsnitz, J., & Träger, M. (2009).  
+  **Influence of EDC cracking severity on the marginal costs of vinyl chloride production.**  
+  *Industrial & Engineering Chemistry Research*, 48(6), 2801–2809.  
+  [https://doi.org/10.1021/ie8006903](https://doi.org/10.1021/ie8006903)
+
+- Fahiminezhad, A., Peyghambarzadeh, S. M., & Rezaeimanesh, M. (2020).  
+  **Numerical Modelling and Industrial Verification of Ethylene Dichloride Cracking Furnace.**  
+  *Journal of Chemical and Petroleum Engineering*, 54(2), 165–185.  
+  [https://doi.org/10.22059/jchpe.2020.286558.1291](https://doi.org/10.22059/jchpe.2020.286558.1291)
+
+These works provided a foundation for understanding the chemical and engineering significance of EDC cracking.  
+What we present here is a **highly simplified model**, focusing on the reaction kinetics and solver performance. Hence, this work does not explore industrial-scale reactor behavior, fluid dynamics, or heat transfer, which are crucial in the real-world systems studied in the references above.
 
 ## Authors
 
