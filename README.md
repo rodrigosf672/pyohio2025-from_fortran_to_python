@@ -13,16 +13,8 @@ EDC → MVC + HCl         (rate constant k1 = 1.0)
 MVC → HCl               (rate constant k2 = 0.5)
 ```
 
-Expressed as ODEs:
-![ODE system](https://latex.codecogs.com/png.image?\dpi{150}\bg_white\large\begin{aligned}
-\frac{dy_1}{dz}&=-k_1y_1\\
-\frac{dy_2}{dz}&=k_1y_1-k_2y_2\\
-\frac{dy_3}{dz}&=k_1y_1+k_2y_2
-\end{aligned})
+<img width="866" height="335" alt="image" src="https://github.com/user-attachments/assets/4531c1eb-a52e-4fe0-a13c-2c8a3c42d234" />
 
-
-Initial condition:
-![Initial condition](https://latex.codecogs.com/png.image?\dpi{150}\bg_white\large y(0)%20=%20[1.0,%200.0,%200.0])
 
 ## Project Structure
 
