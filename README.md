@@ -14,19 +14,15 @@ MVC → HCl               (rate constant k2 = 0.5)
 ```
 
 Expressed as ODEs:
+![ODE system](https://latex.codecogs.com/png.image?\dpi{150}\bg_white\large\begin{aligned}
+\frac{dy_1}{dz}&=-k_1y_1\\
+\frac{dy_2}{dz}&=k_1y_1-k_2y_2\\
+\frac{dy_3}{dz}&=k_1y_1+k_2y_2
+\end{aligned})
 
-\[
-\begin{aligned}
-\frac{dy_1}{dz} &= -k_1 y_1 \\
-\frac{dy_2}{dz} &= k_1 y_1 - k_2 y_2 \\
-\frac{dy_3}{dz} &= k_1 y_1 + k_2 y_2
-\end{aligned}
-\]
 
 Initial condition:
-\[
-y(0) = [1.0,\ 0.0,\ 0.0]
-\]
+![Initial condition](https://latex.codecogs.com/png.image?\dpi{150}\bg_white\large y(0)%20=%20[1.0,%200.0,%200.0])
 
 ## Project Structure
 
