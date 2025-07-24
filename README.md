@@ -94,6 +94,11 @@ This project is licensed under the MIT License.
 
 This project was inspired by prior studies that modeled the cracking of Ethylene Dichloride (EDC), particularly:
 
+- Ferreira, H. S. (2003).  
+  **Métodos matemáticos em modelagem e simulação do craqueamento térmico do 1, 2-Dicloroetano.**  
+  *Doctoral dissertation, University of Campinas, Brazil.*
+  [https://repositorio.unicamp.br/Busca/Download?codigoArquivo=477111](https://repositorio.unicamp.br/Busca/Download?codigoArquivo=477111)
+
 - Schirmeister, R., Kahsnitz, J., & Träger, M. (2009).  
   **Influence of EDC cracking severity on the marginal costs of vinyl chloride production.**  
   *Industrial & Engineering Chemistry Research*, 48(6), 2801–2809.  
