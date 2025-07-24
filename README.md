@@ -59,6 +59,8 @@ To compile the fortran code, you need to have `f2py` installed, which comes with
 ```bash
 brew install meson ninja  # macOS (use equivalent commands for Ubuntu/Windows)
 ```
+> Meson reads the Fortran file and generates a Ninja build script.
+> Ninja runs the compilation commands (e.g., using gfortran) to build the `.so` file.
 
 Then, you can compile the Fortran code using `f2py`:
 
